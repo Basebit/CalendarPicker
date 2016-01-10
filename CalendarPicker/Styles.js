@@ -6,32 +6,37 @@
 
 var { StyleSheet, Dimensions } = require('react-native');
 
-var {width, height,} = Dimensions.get('window'); 
+var {width, height,} = Dimensions.get('window');
+
+var DEF_HEIGHT = 260;
+
 var styles = StyleSheet.create({
   calendar: {
-    height: 320,
+    height: DEF_HEIGHT + 10,
     width: width,
     marginTop: 10
   },
   dayWrapper: {
     width: width/7,
-    height: width/7,
-    borderRadius: width/7/2,
+    height: DEF_HEIGHT/7,
+    //borderRadius: width/7/2,
     backgroundColor: 'rgba(0,0,0,0.0)'
   },
 
   dayButton: {
     width: width/7,
-    height: width/7,
-    borderRadius: width/7/2,
+    height: DEF_HEIGHT/7,
+    //borderRadius: width/7/2,
+    borderWidth: 0.5,
+    borderColor: '#ccc',
     alignSelf: 'center',
     justifyContent: 'center',
   },
 
   dayButtonSelected: {
     width: width/7,
-    height: width/7,
-    borderRadius: width/7/2,
+    height: DEF_HEIGHT/7,
+    //borderRadius: width/7/2,
     backgroundColor: '#D6BA79',
     alignSelf: 'center'
   },
@@ -68,9 +73,9 @@ var styles = StyleSheet.create({
 
   selectedDay: {
     width: width/7,
-    height: width/7,
+    height: DEF_HEIGHT/7,
     backgroundColor: '#5ce600',
-    borderRadius: width/7/2,
+    //borderRadius: width/7/2,
     alignSelf: 'center'
   },
 
