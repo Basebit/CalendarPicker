@@ -4,9 +4,9 @@
  */
 'use strict';
 
-var StyleSheet = require('react-native').StyleSheet;
+var { StyleSheet, Dimensions } = require('react-native');
 
-var {width, height,} = require('Dimensions').get('window'); 
+var {width, height,} = Dimensions.get('window'); 
 var styles = StyleSheet.create({
   calendar: {
     height: 320,
