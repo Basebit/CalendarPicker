@@ -1,0 +1,14 @@
+# Logs
+logs
+*.log
+
+# node-waf configuration
+.gitignore
+calendarPicker.gif
+index.ios.js
+Calendar.xcodeproj
+iOS
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
