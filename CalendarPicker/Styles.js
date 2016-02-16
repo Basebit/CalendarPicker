@@ -48,6 +48,14 @@ var styles = StyleSheet.create({
     alignSelf: 'center'
   },
 
+  //this is the default label style for void dates
+  voidDayLabel: {
+    fontSize: 14,
+    color: '#999',
+    marginTop: 0,
+    alignSelf: 'center'
+  },
+
   dayLabelsWrapper: {
     flexDirection: 'row',
     marginBottom: 10,
@@ -87,7 +95,7 @@ var styles = StyleSheet.create({
   },
 
   headerWrapper: {
-    alignItems: 'center',  
+    alignItems: 'center',
     flexDirection: 'row',
     alignSelf: 'center',
     width: width,
