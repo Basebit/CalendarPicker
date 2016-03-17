@@ -88,6 +88,14 @@ var Days = React.createClass({
     this.updateSelectedStates(this.props.date.getDate());
   },
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.validDates && nextProps.validDates != this.state.validDates) {
+      this.setState({
+        validDates:nextProps.validDates
+      });
+    }
+  },
+
   updateSelectedStates(day) {
     var selectedStates = [],
         daysInMonth = getDaysInMonth(this.props.month, this.props.year),
@@ -269,6 +277,14 @@ var CalendarPicker = React.createClass({
       selectedDay: [],
       validDates: this.props.validDates || [],
     };
+  },
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.validDates && nextProps.validDates != this.state.validDates) {
+      this.setState({
+        validDates:nextProps.validDates
+      });
+    }
   },
 
   onDayChange(day) {
