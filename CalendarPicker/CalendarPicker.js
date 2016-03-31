@@ -94,6 +94,12 @@ var Days = React.createClass({
         validDates:nextProps.validDates
       });
     }
+    if (nextProps.date) {
+      var day = nextProps.date.getDate();
+      if (!this.state.selectedStates[day-1]) {
+        this.updateSelectedStates(day);
+      }
+    }
   },
 
   updateSelectedStates(day) {
@@ -316,9 +322,16 @@ var CalendarPicker = React.createClass({
             day,
             month,
             year
-            } = this.state,
-        date = new Date(year, month, day);
+            } = this.state;
 
+    /* adjust day if it doesn't make sense */
+    /* var maxDay = this.maxMonthDay(month, year); */
+    var maxDay = getDaysInMonth(month, year);
+    if (day > maxDay) {
+      day = maxDay;
+    }
+
+    var date = new Date(year, month, day);
     this.setState({date: date,}, () => {
       this.props.onDateChange(date);
     });
